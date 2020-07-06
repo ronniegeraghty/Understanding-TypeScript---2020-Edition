@@ -2,7 +2,14 @@
 are more strick and are more often used.
 */
 
-type AddFn = (a: number, b: number) => number;
+// type AddFn = (a: number, b: number) => number;
+interface AddFn {
+  /* You add an anonymous function and typescript understands that
+  that the whole interface is for that funcition. */
+  /*Here using a custom type is more common than an interface. */
+  (a: number, b: number): number;
+}
+
 let add: AddFn;
 add = (n1: number, n2: number) => {
   return n1 + n2;
