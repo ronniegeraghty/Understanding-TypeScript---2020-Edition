@@ -1,8 +1,14 @@
 /* You could just make a custom type but interfaces 
 are more strick and are more often used.
 */
-interface Greetable {
-  name: string;
+
+interface Named {
+  readonly name: string;
+}
+
+interface Greetable extends Named {
+  // readonly makes it so that property can only be set once
+  //readonly name: string;
 
   greet(phrase: string): void;
 }
@@ -25,6 +31,8 @@ class Person implements Greetable {
 let user1: Greetable;
 
 user1 = new Person("Ronnie");
+//Causes error because user1 is a Person that extends Greetable and name is readonly
+// user1.name = "Ronaldo";
 
 user1.greet("Hi there I am");
 console.log(user1);
