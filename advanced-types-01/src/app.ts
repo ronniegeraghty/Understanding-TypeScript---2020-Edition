@@ -71,6 +71,7 @@ const v2 = new Truck();
 function useVehicle(vehicle: Vehicle) {
   vehicle.drive();
   if (vehicle instanceof Truck) {
+    //the line above finds out if vehicle was created using the Truck constructor function
     vehicle.loadCargo(1000);
   }
 }
