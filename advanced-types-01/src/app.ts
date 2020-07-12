@@ -119,8 +119,15 @@ moveAnimal({ type: "bird", flyingSpeed: 10 });
 // Adding the <> before the document line lets you type cast the element by putting the type in between the <>
 
 //OR
-const userInputElement = document.getElementById(
-  "user-input"
-)! as HTMLInputElement; //The "as" keyword tells TS that the document line will return the following type
+// const userInputElement = document.getElementById(
+//   "user-input"
+// )! as HTMLInputElement; //The "as" keyword tells TS that the document line will return the following type
 
-userInputElement.value = "Hi there!";
+//When you know the document line will always return something you can use the ! at the end to tell TS that it will never be null
+//If you're not sure if the value could be null or not you should use an if check as follows:
+//You can also do you type casting in the if statement
+const userInputElement = document.getElementById("user-input");
+
+if (userInputElement) {
+  (userInputElement as HTMLInputElement).value = "Hi there!";
+}
