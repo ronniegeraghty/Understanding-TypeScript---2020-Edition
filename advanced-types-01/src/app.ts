@@ -107,3 +107,20 @@ function moveAnimal(animal: Animal) {
 }
 
 moveAnimal({ type: "bird", flyingSpeed: 10 });
+
+//Type Casting
+//const paragraph = document.querySelector("p"); // TypeScript knows that paragraph will either be a <p> or null since we are querying for one.
+
+// const userInputElement = <HTMLInputElement>(
+//   document.getElementById("user-input")!
+// );
+//TypeScript only knows this is an HTML element but doesn't know what type.
+// ! tells typescript the element wont be null
+// Adding the <> before the document line lets you type cast the element by putting the type in between the <>
+
+//OR
+const userInputElement = document.getElementById(
+  "user-input"
+)! as HTMLInputElement; //The "as" keyword tells TS that the document line will return the following type
+
+userInputElement.value = "Hi there!";
