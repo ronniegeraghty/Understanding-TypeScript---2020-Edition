@@ -123,7 +123,7 @@ moveAnimal({ type: "bird", flyingSpeed: 10 });
 //   "user-input"
 // )! as HTMLInputElement; //The "as" keyword tells TS that the document line will return the following type
 
-//When you know the document line will always return something you can use the ! at the end to tell TS that it will never be null
+//When you know the document line will always return something you can use the ! at the end to tell TS that it will never be null.
 //If you're not sure if the value could be null or not you should use an if check as follows:
 //You can also do you type casting in the if statement
 const userInputElement = document.getElementById("user-input");
